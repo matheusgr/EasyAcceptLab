@@ -6,20 +6,20 @@ fecharAposta cenario=1 ocorreu=false
 fecharAposta cenario=2 ocorreu=true
 
 expect 100 getCaixaCenario cenario=1
-expect 20200 getCaixaCenario cenario=2
+expect 100 getCaixaCenario cenario=2
 
-expect 19900 getTotalRateioCenario cenario=1
-expect 239800 getTotalRateioCenario cenario=2
+expect 9900 getTotalRateioCenario cenario=1
+expect 9900 getTotalRateioCenario cenario=2
 
-expect 120300 getCaixa
+expect 100200 getCaixa
 
 # Testes com exception
 
 
 expectError "Erro ao fechar aposta: Cenario invalido" fecharAposta cenario=0 ocorreu=false
-expectError "Erro ao fechar aposta: Cenario invalido" fecharAposta cenario=-1 ocorreu=true
+expectError "Erro ao fechar aposta: Cenario invalido" fecharAposta cenario=-1 ocorreu=false
 expectError "Erro ao fechar aposta: Cenario nao cadastrado" fecharAposta cenario=80 ocorreu=false
-expectError "Erro ao fechar aposta: Cenario ja esta fechado" fecharAposta cenario=1 ocorreu=true
+expectError "Erro ao fechar aposta: Cenario ja esta fechado" fecharAposta cenario=1 ocorreu=false
 
 expectError "Erro na consulta do caixa do cenario: Cenario invalido" getCaixaCenario cenario=0
 expectError "Erro na consulta do caixa do cenario: Cenario invalido" getCaixaCenario cenario=-1

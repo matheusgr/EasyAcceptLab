@@ -12,7 +12,9 @@ cadastrarAposta cenario=4 apostador="Viktor Borgino" valor=3000 previsao="VAI AC
 
 fecharAposta cenario=4 ocorreu=true
 
-expect 1020 getCaixaCenario cenario=4
+expect 20 getCaixaCenario cenario=4
+expect 2980 getTotalRateioCenario cenario=4
+expect 99210 getCaixa
 
 # Testes com exception
 

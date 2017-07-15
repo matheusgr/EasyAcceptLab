@@ -11,6 +11,8 @@ public class Main {
 		testes.add("us" + File.separator + "us2_test.txt");
 		testes.add("us" + File.separator + "us3_test.txt");
 		testes.add("us" + File.separator + "us4_test.txt");
+		testes.add("us" + File.separator + "us5_test.txt");
+		testes.add("us" + File.separator + "us6_test.txt");
 		EasyAccept.executeEasyAcceptTests("projeto.Facade", testes);
 	}
 	

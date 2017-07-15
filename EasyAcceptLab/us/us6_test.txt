@@ -29,3 +29,27 @@ id3=cadastrarApostaSeguraValor cenario=7 apostador="Antonio Seguro1" valor=501 p
 id4=cadastrarApostaSeguraTaxa  cenario=7 apostador="Antonio Seguro2" valor=501 previsao="VAI ACONTECER" taxa=0.02 custo=40
 
 expect 98296 getCaixa
+
+# Testes com exception
+
+expectError "Erro no cadastro de aposta assegurada por valor: Apostador nao pode ser vazio ou nulo" cadastrarApostaSeguraValor cenario=7 apostador="" valor=501 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Apostador nao pode ser vazio ou nulo" cadastrarApostaSeguraValor cenario=7 apostador="   " valor=501 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Cenario invalido" cadastrarApostaSeguraValor cenario=0 apostador="Mano Walter" valor=501 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Cenario invalido" cadastrarApostaSeguraValor cenario=-1 apostador="Mano Walter" valor=501 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Valor nao pode ser menor ou igual a zero" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=0 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Valor nao pode ser menor ou igual a zero" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=-500 previsao="VAI ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao invalida" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=501 previsao="ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao invalida" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=501 previsao="N ACONTECER" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao nao pode ser vazia ou nula" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=501 previsao="" valorAssegurado=200 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao nao pode ser vazia ou nula" cadastrarApostaSeguraValor cenario=7 apostador="Mano Walter" valor=501 previsao="  " valorAssegurado=200 custo=50
+
+expectError "Erro no cadastro de aposta assegurada por valor: Apostador nao pode ser vazio ou nulo" cadastrarApostaSeguraTaxa cenario=7 apostador="" valor=501 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Apostador nao pode ser vazio ou nulo" cadastrarApostaSeguraTaxa cenario=7 apostador="   " valor=501 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Cenario invalido" cadastrarApostaSeguraTaxa cenario=0 apostador="Mano Walter" valor=501 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Cenario invalido" cadastrarApostaSeguraTaxa cenario=-1 apostador="Mano Walter" valor=501 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Valor nao pode ser menor ou igual a zero" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=0 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Valor nao pode ser menor ou igual a zero" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=-500 previsao="VAI ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao invalida" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=501 previsao="ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao invalida" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=501 previsao="N ACONTECER" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao nao pode ser vazia ou nula" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=501 previsao="" taxa=0.02 custo=50
+expectError "Erro no cadastro de aposta assegurada por valor: Previsao nao pode ser vazia ou nula" cadastrarApostaSeguraTaxa cenario=7 apostador="Mano Walter" valor=501 previsao="  " taxa=0.02 custo=50
